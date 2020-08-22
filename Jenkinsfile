@@ -22,7 +22,7 @@ pipeline{
                 kubectl apply -f elasticstack/filebeat-role-binding.yml --namespace=${NAMESPACE}
                 kubectl apply -f elasticstack/filebeat-service-account.yml --namespace=${NAMESPACE}
                 kubectl apply -f elasticstack/filebeat-daemonset.yml --namespace=${NAMESPACE}
- 
+                ./elasticstack/test/check_elasticsearch_data_flow.sh
                 """
                 
             }
