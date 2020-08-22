@@ -24,7 +24,7 @@ variable "instance_subnet_id" {
 
 variable "instance_key_name" {
   type    = "string"
-  default = "Trial-pair"
+  default = "sheetal_nvirginia_new"
 }
 
 variable "aws_profile_name" {
@@ -34,7 +34,7 @@ variable "aws_profile_name" {
 
 variable "aws_region" {
   type    = "string"
-  default = "eu-central-1"
+  default = "us-east-1"
 }
 
 variable "ec2_ingress_cidr" {
