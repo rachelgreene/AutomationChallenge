@@ -1,3 +1,9 @@
+provider "aws" {
+
+        region = "us-east-1"
+
+}
+
 data "template_file" "init" {
   template = "${file("${path.module}/setup.sh")}"
 }
