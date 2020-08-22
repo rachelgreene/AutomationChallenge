@@ -9,7 +9,7 @@ pipeline{
             }
 
         }
-        stage('Printing Hello'){
+        stage('Printing Hello World'){
             steps{
                 
                 sh """
