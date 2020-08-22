@@ -14,12 +14,12 @@ variable "instance_tags" {
 
 variable "instance_vpc_id" {
   type    = "string"
-  default = "vpc-02f45832e96006e98"
+  default = "vpc-f526398f"
 }
 
 variable "instance_subnet_id" {
   type    = "string"
-  default = "subnet-064f867a2028b70b9"
+  default = "subnet-f91402c7"
 }
 
 variable "instance_key_name" {
