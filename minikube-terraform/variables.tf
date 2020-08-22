@@ -39,7 +39,7 @@ variable "aws_region" {
 
 variable "ec2_ingress_cidr" {
   type    = list(string)
-  default = ["92.75.28.171/32"]
+  default = ["172.31.59.251/32"]
 }
 
 
