@@ -5,7 +5,7 @@ set -e
 FAILURE=1
 SUCCESS=0
 
-elasticsearch_cluster_ip="$(sudo kubectl get svc elasticsearch -o json | jq -r .items[0].spec.clusterIP)"
+elasticsearch_cluster_ip="$(sudo kubectl get svc elasticsearch -o json | sudo jq -r .items[0].spec.clusterIP)"
 elasticsearch_cluster_port="9200"
 
 random_index_name="$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c6)"
