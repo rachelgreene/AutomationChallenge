@@ -7,7 +7,7 @@ pipeline{
             }
 
         }
-        stage('Printing Hello World sital'){
+        stage('Printing Hello World Sheetal'){
             steps{
                 
                 sh """
