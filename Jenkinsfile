@@ -1,5 +1,3 @@
-#def NAMESPACE = "test"
-
 pipeline{
     agent any
     stages{
