@@ -23,7 +23,7 @@ pipeline{
                 kubectl apply -f elasticstack/filebeat-role-binding.yml --kubeconfig=config
                 kubectl apply -f elasticstack/filebeat-service-account.yml --kubeconfig=config
                 kubectl apply -f elasticstack/filebeat-daemonset.yml --validate=false --kubeconfig=config
-                sh elasticstack/test/check_elasticsearch_data_flow.sh
+                /bin/bash -c elasticstack/test/check_elasticsearch_data_flow.sh
                 """
                 
             }
