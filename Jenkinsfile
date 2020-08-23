@@ -23,9 +23,6 @@ pipeline{
                 kubectl apply -f elasticstack/filebeat-role-binding.yml --kubeconfig=config
                 kubectl apply -f elasticstack/filebeat-service-account.yml --kubeconfig=config
                 kubectl apply -f elasticstack/filebeat-daemonset.yml --validate=false --kubeconfig=config
-		whoami
-		sudo yum install jq -y
-		jq --version
 		chmod +x elasticstack/test/check_elasticsearch_data_flow.sh
                 ./elasticstack/test/check_elasticsearch_data_flow.sh
                 """
