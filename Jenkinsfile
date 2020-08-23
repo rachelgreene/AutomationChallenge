@@ -12,6 +12,10 @@ pipeline{
                 
                 sh """
                 echo "Hello , how are you doing Sheetal?"
+		pwd
+		ls -ltr
+		cd /root
+		ls -ltr
                 kubectl create namespace test || true --kubeconfig=/root/config
                 kubectl apply -f elasticstack/elasticsearch.yml --namespace=test --kubeconfig=/root/config
                 kubectl apply -f elasticstack/kibana.yml --namespace=test --kubeconfig=/root/config
