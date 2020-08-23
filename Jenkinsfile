@@ -14,6 +14,7 @@ pipeline{
                 echo "Hello , how are you doing Sheetal?"
 		pwd
 		ls -ltr
+		kubectl get pods --kubeconfig=config
                 kubectl create namespace test || true --kubeconfig=config
                 kubectl apply -f elasticstack/elasticsearch.yml --namespace=test --kubeconfig=config
                 kubectl apply -f elasticstack/kibana.yml --namespace=test --kubeconfig=config
