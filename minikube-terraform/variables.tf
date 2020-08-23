@@ -4,7 +4,7 @@ variable "instance_ami_id" {
 }
 variable "instance_type" {
   type    = "string"
-  default = "t3.small"
+  default = "t2.medium"
 }
 
 variable "instance_tags" {
