@@ -39,7 +39,7 @@ variable "instance_key_name" {
 
 variable "ec2_ingress_cidr" {
   type    = "list"
-  default = ["34.231.180.169/32"]
+  default = ["172.31.79.92/32"]
 }
 
 

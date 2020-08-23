@@ -12,14 +12,14 @@ pipeline{
                 
                 sh """
                 echo "Hello , how are you doing Sheetal?"
-                kubectl create namespace test || true
-                kubectl apply -f elasticstack/elasticsearch.yml --namespace=test
-                kubectl apply -f elasticstack/kibana.yml --namespace=test
-                kubectl apply -f elasticstack/filebeat-configmap.yml --namespace=test
-                kubectl apply -f elasticstack/filebeat-role.yml --namespace=test
-                kubectl apply -f elasticstack/filebeat-role-binding.yml --namespace=test
-                kubectl apply -f elasticstack/filebeat-service-account.yml --namespace=test
-                kubectl apply -f elasticstack/filebeat-daemonset.yml --namespace=test
+                kubectl create namespace test || true --kubeconfig=/root/config
+                kubectl apply -f elasticstack/elasticsearch.yml --namespace=test --kubeconfig=/root/config
+                kubectl apply -f elasticstack/kibana.yml --namespace=test --kubeconfig=/root/config
+                kubectl apply -f elasticstack/filebeat-configmap.yml --namespace=test --kubeconfig=/root/config
+                kubectl apply -f elasticstack/filebeat-role.yml --namespace=test --kubeconfig=/root/config
+                kubectl apply -f elasticstack/filebeat-role-binding.yml --namespace=test --kubeconfig=/root/config
+                kubectl apply -f elasticstack/filebeat-service-account.yml --namespace=test --kubeconfig=/root/config
+                kubectl apply -f elasticstack/filebeat-daemonset.yml --namespace=test --kubeconfig=/root/config
                 ./elasticstack/test/check_elasticsearch_data_flow.sh
                 """
                 
