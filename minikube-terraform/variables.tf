@@ -4,7 +4,7 @@ variable "instance_ami_id" {
 }
 variable "instance_type" {
   type    = "string"
-  default = "t3.large"
+  default = "t3.small"
 }
 
 variable "instance_tags" {
@@ -27,19 +27,19 @@ variable "instance_key_name" {
   default = "sheetal_nvirginia_new"
 }
 
-#variable "aws_profile_name" {
-#  type    = "string"
-#  default = "onelogin"
-#}
+variable "aws_profile_name" {
+  type    = "string"
+  default = "onelogin"
+}
 
-#variable "aws_region" {
-#  type    = "string"
-#  default = "us-east-1"
-#}
+variable "aws_region" {
+  type    = "string"
+  default = "us-east-1"
+}
 
 variable "ec2_ingress_cidr" {
   type    = "list"
-  default = ["172.31.59.251/32"]
+  default = ["34.231.180.169/32"]
 }
 
 
