@@ -1,8 +1,8 @@
-#provider "aws" {
+provider "aws" {
 
- #       region = "us-east-1"
+        region = "us-east-1"
 
-#}
+}
 
 data "template_file" "init" {
   template = "${file("${path.module}/setup.sh")}"
@@ -65,10 +65,10 @@ resource "aws_security_group_rule" "sg_egress" {
   type              = "egress"
 }
 
-provider "aws" {
-  region  = "${var.aws_region}"
-  profile = "${var.aws_profile_name}"
-}
+#provider "aws" {
+#  region  = "${var.aws_region}"
+#  profile = "${var.aws_profile_name}"
+#}
 
 output "public_dns" {
   value = "${aws_instance.esk8s_instance.public_dns}"
