@@ -45,10 +45,13 @@ mv ./kubectl /usr/bin/kubectl
 kubectl version --short --client
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 chmod +x ./minikube
-mv ./minikube /usr/bin/minikube
+#mv ./minikube /usr/bin/minikube
 minikube start --vm-driver=none || true
-minikube delete
+yum install -y conntrack
+#minikube delete
 
 # TODO: Needs more investigation. Minikube fails for the first time
 minikube start --vm-driver=none
+minikube status
+
 
