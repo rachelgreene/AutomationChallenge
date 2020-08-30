@@ -15,15 +15,13 @@ pipeline{
 		pwd
 		ls -ltr
 		kubectl get pods --kubeconfig=config
-  #              kubectl create namespace ${NAMESPACE} || true --kubeconfig=config
-  #		kubectl get pods --namespace=${NAMESPACE} --kubeconfig=config
-                kubectl apply -f elasticstack/elasticsearch.yml --namespace=test --kubeconfig=config
-                kubectl apply -f elasticstack/kibana.yml --namespace=test --kubeconfig=config
-                kubectl apply -f elasticstack/filebeat-configmap.yml --namespace=test --kubeconfig=config
-                kubectl apply -f elasticstack/filebeat-role.yml --namespace=test --kubeconfig=config
-                kubectl apply -f elasticstack/filebeat-role-binding.yml --namespace=test --kubeconfig=config
-                kubectl apply -f elasticstack/filebeat-service-account.yml --namespace=test --kubeconfig=config
-                kubectl apply -f elasticstack/filebeat-daemonset.yml --namespace=test --validate=false --kubeconfig=config
+                kubectl apply -f elasticstack/elasticsearch.yml --kubeconfig=config
+                kubectl apply -f elasticstack/kibana.yml --kubeconfig=config
+                kubectl apply -f elasticstack/filebeat-configmap.yml --kubeconfig=config
+                kubectl apply -f elasticstack/filebeat-role.yml --kubeconfig=config
+                kubectl apply -f elasticstack/filebeat-role-binding.yml --kubeconfig=config
+                kubectl apply -f elasticstack/filebeat-service-account.yml --kubeconfig=config
+                kubectl apply -f elasticstack/filebeat-daemonset.yml --validate=false --kubeconfig=config
 #		chmod +x elasticstack/test/check_elasticsearch_data_flow.sh
 #                ./elasticstack/test/check_elasticsearch_data_flow.sh
                 """
