@@ -6,7 +6,7 @@ FAILURE=1
 SUCCESS=0
 
 #elasticsearch_cluster_ip="$(kubectl get svc elasticsearch --kubeconfig=config -o json | jq -r .items[0].spec.clusterIP)"
-elasticsearch_cluster_ip="$(kubectl get svc elasticsearch --kubeconfig=config| awk '{print $3}'|tail -n 1|awk '{print $1}')"                                                                                                                    1
+elasticsearch_cluster_ip="$(kubectl get svc elasticsearch| awk '{print $3}'|grep -v CLUSTER-IP)"                                                                                                                    1
 
 elasticsearch_cluster_port="9200"
 
