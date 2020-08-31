@@ -30,9 +30,7 @@ This repository covers automated provisioning of ElasticStack (*ElasticSearch/Fi
 │   ├── filebeat-role.yml
 │   ├── filebeat-service-account.yml
 │   ├── kibana.yml
-│   └── test                                (Basic test scripts to check health of the ELK cluster)
-│       ├── check_elasticsearch_data_flow
-│       └── es_test_data.py
+|
 └── minikube-terraform                      (Terraform scripts)
     ├── main.tf
     ├── setup.sh
@@ -42,7 +40,6 @@ This repository covers automated provisioning of ElasticStack (*ElasticSearch/Fi
 
 
 ### Basic Workflow:
-![Basic Workflow](https://i.imgur.com/sOSpwx1.png)
 
 ## Steps
 
