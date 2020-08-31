@@ -4,13 +4,18 @@ AutomationChallenge
 
 ## **Automated provisioning of Elastic Stack on K8S (Backed by Minikube in AWS)**
 
-This repository covers automated provisioning/testing of ElasticStack (*ElasticSearch/Filebeat/Kibana*) on Minikube. The setup includes provisoning an EC2 instance on AWS with Terraform and subsequently deploying *Docker, Minikube, Gitlab-CE (with runner)* inside the EC2 instance. CI/CD pipelines can then deploy ElasticStack on Minikube and run same basic tests.
+This repository covers automated provisioning of ElasticStack (*ElasticSearch/Filebeat/Kibana*) on Minikube. The setup includes provisoning an EC2 instance on AWS with Terraform and subsequently deploying *Docker, Minikube, kubectl, git, jq* inside the EC2 instance. CI/CD pipeline from jenkinsfile can then deploy ElasticStack on Minikube and run.
 
 
 
 ### **Pre-requisites:**
-- *Terraform* should be installed on your local machine
+-*Git* should be installed on your local machine
+-*Terraform* should be installed on your local machine
 - AWS access-key/secret pair
+-Execute terraform init, terraform plan , terraform apply
+-Install java , jenkins to run the CI/CD pipeline
+-Configure github weebhook to integrate with jenkins
+-Install Docker,Kubectl,minikube,jq
 
 
 
