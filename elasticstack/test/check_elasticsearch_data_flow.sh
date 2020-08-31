@@ -5,7 +5,9 @@ set -e
 FAILURE=1
 SUCCESS=0
 
-elasticsearch_cluster_ip="$(kubectl get svc elasticsearch --kubeconfig=config -o json | jq -r .items[0].spec.clusterIP)"
+#elasticsearch_cluster_ip="$(kubectl get svc elasticsearch --kubeconfig=config -o json | jq -r .items[0].spec.clusterIP)"
+elasticsearch_cluster_ip=kubectl get svc elasticsearch --kubeconfig=config| awk '{print $3}'|tail -1|awk '{print $1}'                                                                                                                    1
+
 elasticsearch_cluster_port="9200"
 
 random_index_name="$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c6)"
