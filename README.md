@@ -45,7 +45,7 @@ This repository covers automated provisioning of ElasticStack (*ElasticSearch/Fi
 
 **1) Clone the repository in your local machine**
 ```
-git clone https://github.com/akskap/esk8s.git
+git clone https://github.com/rachelgreene/AutomationChallenge.git
 ```
 
 
@@ -61,67 +61,42 @@ cd minikube-terraform; terraform apply;
 This will start provisioning an EC2 instance with security group definition and corresponding ingress/egress rules
 
 A cloud-init script is configured as part of EC2 instance creation. This takes care of setting up tools like:
-- Gitlab-CE 
+- kubectl 
 - Docker
 - Minikube 
-- Other system tools like jq, git, gitlab-runner etc.
+- Other system tools like jq, git etc.
 
-Terraform run completes with an output like:
-```
-Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
+After Terraform run completes:
 
-Outputs:
-
-public_dns = ec2-xx-xxx-xxx-xxx.eu-central-1.compute.amazonaws.com
-public_ip = xx.xxx.xxx.xxx
-```
-The public dns endpoint / ip-address will allow access to the EC2 instance. At this point if you try to access `http://ec2-xx-xxx-xxx-xxx.eu-central-1.compute.amazonaws.com` in your browser, you will be greeted by Gitlab-CE. Here, you can choose a password for the root user and create a repository that will host the contents of K8S manifests and CI/CI pipeline definition in later steps
+The public dns endpoint / ip-address will allow access to the EC2 instance. 
 
 
-**3) Setup Gitlab Runner**
+**3) Setup Jenkins in local**
 
-Installation of Gitlab Runner is already taken care of in the cloud-init script in EC2. Next, we need to register the runner with the repository that we created in Step 2.
-
-Visit `Repository page > Settings > CI/CD > Runners` and note down the details for Runner Registration token and Gitlab URL:
-
-SSH into the EC2 instance with the following command:
-```
-ssh -i <path_to_aws_pem_file> ec2-user@ec2-xx-xxx-xxx-xxx.eu-central-1.compute.amazonaws.com
-sudo su
-sudo gitlab-runner register                             \
-    --non-interactive                                   \
-    --url "<GITLAB_URL>"                                \
-    --registration-token "<GITLAB_RUNNER_REG_TOKEN>"    \
-    --executor "shell"                                  \
-    --description "Runner for esk8s project"            \
-    --locked="true"                                     \
-    --request-concurrency 4
-```
+Configure github webhook with the push event to integrate github with jenkins.As soon as a github push occurs , jenkins immediately senses it and the CI/CD pipeline starts executing.
 
 
-**4) Push code from local machine to the new repository to enable pipeline execution and test**
 
-```
-git remote add esk8s http://<ec2-xx-xxx-xxx-xxx.eu-central-1.compute.amazonaws.com>/root/<repository_name>
-git push esk8s master
-```
+**4) Push code from local machine to the repository to enable pipeline execution and test**
 
-Code push will trigger the Gitlab pipeline, run log for which can be seen @ http://ec2-xx-xxx-xxx-xxx.eu-central-1.compute.amazonaws.com/root/<repo_name>/pipelines
+git add .
+git status 
+git commit -m "testing"
+git status
+git push
+
+Code push will trigger the Jenkins pipeline.Detailed steps can be seen in the console output screen.
 
 
 **5) Access Kibana on local machine**
 
-In order to run Kibana on local machine, we will be tunnelling the traffic via SSH into the EC2 instance
-Kibana is exposed as a NodePort service on Minikube. First, let's get the Node IP address exposed by Minikube by running a command in the EC2 instance
-```
-kubectl get services -o json --namespace=test -l service=kibana | jq -r '.items[0].spec.clusterIP'
-```
-Now, on your local machine, run the following command:
-```
-ssh -N -L 5601:<kibana_cluster_ip>:5601 -i <your_aws_key_pair>.pem ec2-user@ec2-xx-xxx-xxx-xxx.eu-central-1.compute.amazonaws.com
-```
+In order to run Kibana on local machine:
 
-Kibana dashboard can now be accessed on your local machine under `http://localhost:5601`
+Check in browser using the url : https://public ip of ek8s-instance:30770
+
+
+
+Kibana dashboard can now be accessed on your local machine.
 
 
 
