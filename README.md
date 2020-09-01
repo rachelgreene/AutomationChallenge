@@ -79,11 +79,11 @@ Configure github webhook with the push event to integrate github with jenkins.As
 
 **4) Push code from local machine to the repository to enable pipeline execution and test**
 
-git add .
-git status 
-git commit -m "testing"
-git status
-git push
+- git add .
+- git status 
+- git commit -m "testing"
+- git status
+- git push
 
 Code push will trigger the Jenkins pipeline.Detailed steps can be seen in the console output screen.
 
