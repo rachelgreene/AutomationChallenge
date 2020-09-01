@@ -92,7 +92,7 @@ Code push will trigger the Jenkins pipeline.Detailed steps can be seen in the co
 
 In order to run Kibana on local machine:
 
-Check in browser using the url : https://public ip of ek8s-instance:30770
+Check in browser using the url : https://public ip of ek8s-instance:31234
 
 
 
