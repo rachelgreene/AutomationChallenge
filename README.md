@@ -9,8 +9,8 @@ This repository covers automated provisioning of ElasticStack (*ElasticSearch/Fi
 
 
 ### **Pre-requisites:**
--*Git* should be installed on your local machine
--*Terraform* should be installed on your local machine
+- *Git* should be installed on your local machine
+- *Terraform* should be installed on your local machine
 - AWS access-key/secret pair
 - Execute terraform init, terraform plan , terraform apply
 - Install java , jenkins to run the CI/CD pipeline
