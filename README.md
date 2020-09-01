@@ -12,10 +12,10 @@ This repository covers automated provisioning of ElasticStack (*ElasticSearch/Fi
 -*Git* should be installed on your local machine
 -*Terraform* should be installed on your local machine
 - AWS access-key/secret pair
--Execute terraform init, terraform plan , terraform apply
--Install java , jenkins to run the CI/CD pipeline
--Configure github weebhook to integrate with jenkins
--Install Docker,Kubectl,minikube,jq
+- Execute terraform init, terraform plan , terraform apply
+- Install java , jenkins to run the CI/CD pipeline
+- Configure github weebhook to integrate with jenkins
+- Install Docker,Kubectl,minikube,jq
 
 
 
