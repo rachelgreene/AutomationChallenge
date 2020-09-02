@@ -27,15 +27,6 @@ variable "instance_key_name" {
   default = "sheetal_nvirginia_new"
 }
 
-#variable "aws_profile_name" {
-#  type    = "string"
-#  default = "onelogin"
-#}
-
-#variable "aws_region" {
-#  type    = "string"
-#  default = "us-east-1"
-#}
 
 variable "ec2_ingress_cidr" {
   type    = "list"
