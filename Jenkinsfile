@@ -11,7 +11,7 @@ pipeline{
             steps{
                 
                 sh """
-                echo "Hello , how are you doing?"
+                echo "Hello , how are you doing everyone?"
 		pwd
 		ls -ltr
 		kubectl get pods --kubeconfig=config
