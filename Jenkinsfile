@@ -7,11 +7,11 @@ pipeline{
             }
 
         }
-        stage('Printing Hello World Sital Prusty'){
+        stage('Deploying ELK stack'){
             steps{
                 
                 sh """
-                echo "Hello , how are you doing Sheetal?"
+                echo "Hello , how are you doing?"
 		pwd
 		ls -ltr
 		kubectl get pods --kubeconfig=config
