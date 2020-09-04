@@ -15,7 +15,7 @@ This repository covers automated provisioning of ElasticStack (*ElasticSearch/Fi
 - Execute terraform init, terraform plan , terraform apply
 - Install java , jenkins to run the CI/CD pipeline
 - Configure github weebhook to integrate with jenkins
-- Install Docker,Kubectl,minikube,jq
+- Install Docker,Kubectl,minikube
 
 
 
