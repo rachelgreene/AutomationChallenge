@@ -43,7 +43,7 @@ This repository covers automated provisioning of ElasticStack (*ElasticSearch/Fi
 
 ## Steps
 
-**1) Clone the repository in your local machine**
+**1) Clone the repository in your local machine(AWS Instance)**
 ```
 git clone https://github.com/sitalprusty/AutomationChallenge.git
 ```
